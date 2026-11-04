@@ -1,80 +1,112 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="tr">
 <head>
-<meta charset="UTF-8">
+<meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>CarPulse – Gizlilik Politikası / Privacy Policy</title>
 <style>
-body{font-family:-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;max-width:760px;margin:0 auto;padding:32px 20px;line-height:1.6;color:#222}
-h1{font-size:1.6em;margin-bottom:4px}h2{margin-top:2em;border-bottom:1px solid #ddd;padding-bottom:4px}h3{margin-top:1.4em}
-.meta{color:#666;font-size:.9em}a{color:#1a73e8}hr{margin:48px 0;border:none;border-top:2px solid #eee}
+  :root { --bg: #ffffff; --fg: #1b1d22; --muted: #5b6070; --accent: #0e8fb3; --line: #e3e6ec; }
+  @media (prefers-color-scheme: dark) { :root { --bg: #0f1116; --fg: #e8eaf0; --muted: #a0a6b4; --accent: #39c6e8; --line: #262a33; } }
+  body { margin: 0; background: var(--bg); color: var(--fg); font: 16px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+  main { max-width: 760px; margin: 0 auto; padding: 32px 16px 64px; }
+  h1 { font-size: 1.8rem; margin: 0 0 4px; }
+  h2 { font-size: 1.25rem; margin: 36px 0 8px; padding-top: 16px; border-top: 1px solid var(--line); }
+  h3 { font-size: 1.02rem; margin: 22px 0 6px; }
+  p, li { color: var(--fg); }
+  .muted { color: var(--muted); font-size: .92rem; }
+  nav a, a { color: var(--accent); }
+  ul { padding-left: 20px; }
 </style>
 </head>
 <body>
-<h1>CarPulse – Gizlilik Politikası</h1>
-<p class="meta">Yürürlük tarihi: 1 Kasım 2026 · Geliştirici: Yuritran</p>
+<main>
+<h1>CarPulse</h1>
+<p class="muted">Son güncelleme / Last updated: 3 Kasım 2026 / November 3, 2026</p>
+<nav><a href="#tr">Türkçe</a> · <a href="#en">English</a></nav>
 
-<p>Bu gizlilik politikası, Yuritran tarafından geliştirilen CarPulse Android uygulamasının ("Uygulama") bilgilerinizi nasıl işlediğini açıklar.</p>
+<section id="tr">
+<h2>Gizlilik Politikası</h2>
+<p>CarPulse, aracının OBD-II verilerini okuyup sürüş, yakıt, arıza ve bakım bilgilerini gösteren bir uygulamadır. Bu politika, uygulamanın hangi verileri kullandığını ve bunlarla ne yaptığını açıklar.</p>
 
-<h3>Toplanan veriler</h3>
-<p>Uygulama hiçbir kişisel veriyi toplamaz veya sunuculara göndermez. Hesap oluşturma veya giriş gerekmez.</p>
+<h3>Kısaca</h3>
+<ul>
+  <li>Hesap açman gerekmez; adın, e-postan veya telefon numaran istenmez.</li>
+  <li>Verilerin telefonunda saklanır. Geliştiriciye ait bir sunucu yoktur, verilerin bize gönderilmez.</li>
+  <li>Reklam, analiz veya izleme aracı kullanılmaz; veriler satılmaz ve paylaşılmaz.</li>
+</ul>
 
-<h3>Araç verileri</h3>
-<p>Uygulama, bir Bluetooth OBD2 (ELM327) adaptörü aracılığıyla aracınızdan motor devri, hız, motor sıcaklığı, arıza kodları ve akü voltajı gibi teknik verileri okur. Bu veriler; canlı göstergeler, sürüş analizi, arıza uyarıları, bakım hatırlatmaları ve yolculuk kayıtları oluşturmak için yalnızca cihazınızda işlenir ve saklanır. Hiçbir sunucuya gönderilmez.</p>
+<h3>Telefonda saklanan veriler</h3>
+<ul>
+  <li><b>Araç verileri:</b> hız, devir, motor sıcaklığı, yakıt tüketimi, akü voltajı, arıza kodları ve OBD adaptöründen okunan diğer değerler.</li>
+  <li><b>Yolculuklar:</b> süre, mesafe, yakıt, sürüş puanı ve kayıt sırasında tutulan rota (konum noktaları).</li>
+  <li><b>Kendi girdiklerin:</b> araç markası/modeli, yakıt alımları, bakım kayıtları, ayarlar ve isteğe bağlı Claude API anahtarın.</li>
+</ul>
+<p>Bu verileri uygulama içinden silebilir, uygulamayı kaldırarak da tamamen silebilirsin. Android'in yedekleme özelliği açıksa, Android bu verileri kendi Google hesabındaki uygulama yedeğine dahil edebilir; bu yedek Google tarafından yönetilir.</p>
 
-<h3>Bluetooth ve konum izinleri</h3>
-<p>Uygulama, OBD2 adaptörünü bulmak ve ona bağlanmak için Bluetooth izinlerine (BLUETOOTH_SCAN, BLUETOOTH_CONNECT) ihtiyaç duyar. Android 11 ve önceki sürümlerde sistem, Bluetooth cihaz taraması için konum izni (ACCESS_FINE_LOCATION) gerektirir. Bu izin yalnızca adaptörü bulmak için kullanılır. Yolculuk kaydı özelliği konum kullanıyorsa, konum verileri yalnızca cihazınızda saklanır ve paylaşılmaz.</p>
+<h3>İzinler</h3>
+<ul>
+  <li><b>Bluetooth / Yakındaki cihazlar:</b> OBD adaptörünü bulmak ve ona bağlanmak için.</li>
+  <li><b>Konum:</b> yolculuk rotasını çizmek ve OBD verisi olmadığında hızı GPS'ten hesaplamak için. Konum yalnızca kayıt açıkken kullanılır ve yalnızca telefonda saklanır.</li>
+  <li><b>Bildirimler:</b> kayıt durumunu, arıza ve bakım uyarılarını göstermek için.</li>
+  <li><b>Ön plan hizmeti:</b> ekran kapalıyken de kaydın sürmesi için.</li>
+  <li><b>Android Auto araç verileri (hız, yakıt, kilometre):</b> OBD adaptörü olmadan araçtan veri okumak için.</li>
+</ul>
 
-<h3>Verilerin silinmesi</h3>
-<p>Uygulama verilerinizi uygulama içinden veya Android ayarlarından uygulama verilerini temizleyerek ya da uygulamayı kaldırarak istediğiniz zaman silebilirsiniz.</p>
+<h3>Üçüncü taraflara giden veriler</h3>
+<ul>
+  <li><b>Yapay zeka önerisi (isteğe bağlı):</b> Yalnızca kendi Claude API anahtarını girip "Yapay zekaya sor"a bastığında, araç kontrol raporunun bir özeti (arıza kodları, sensör ve test sonuçları, son 30 günün sürüş özeti, yaklaşan bakımlar, araç markası/modeli) Anthropic'e gönderilir. Konum ve rota gönderilmez. Bu veri Anthropic'in <a href="https://www.anthropic.com/legal/privacy">gizlilik politikasına</a> tabidir.</li>
+  <li><b>Harita:</b> Yolculuk rotası gösterilirken harita görselleri OpenStreetMap sunucularından indirilir; bu sırada bu sunucular IP adresini görebilir. Rota bilgisi gönderilmez.</li>
+  <li><b>Bağlı araç hesabı (isteğe bağlı):</b> Ayarlar'da kendin bir sunucu adresi girersen, araç verisi o adresten okunur. Bu sunucuyu sen seçersin.</li>
+</ul>
 
-<h3>Üçüncü taraf hizmetler</h3>
-<p>Uygulama, kişisel veri toplayan üçüncü taraf analiz veya reklam hizmeti kullanmaz.</p>
+<h3>Çocuklar</h3>
+<p>CarPulse 13 yaşından küçük çocuklara yönelik değildir ve bilerek çocuklardan veri toplamaz.</p>
 
-<h3>Sorumluluk reddi</h3>
-<p>Uygulama profesyonel araç teşhisinin yerini tutmaz. Araç kullanırken uygulamayla etkileşime girmeyin.</p>
+<h3>Değişiklikler ve iletişim</h3>
+<p>Bu politika değişirse bu sayfa güncellenir. Soruların için: <a href="mailto:yuritrantech@gmail.com">yuritrantech@gmail.com</a></p>
+</section>
 
-<h3>Çocukların gizliliği</h3>
-<p>Uygulama çocuklara yönelik değildir ve bilerek kimseden kişisel veri toplamaz.</p>
+<section id="en">
+<h2>Privacy Policy</h2>
+<p>CarPulse reads your car's OBD-II data and shows driving, fuel, fault and maintenance information. This policy explains which data the app uses and what it does with it.</p>
 
-<h3>Değişiklikler</h3>
-<p>Bu politika güncellenebilir. Değişiklikler bu sayfada yayınlanır ve yürürlük tarihi güncellenir.</p>
+<h3>In short</h3>
+<ul>
+  <li>No account is needed; the app never asks for your name, email or phone number.</li>
+  <li>Your data stays on your phone. There is no developer server and your data is not sent to us.</li>
+  <li>No ads, analytics or tracking tools are used; data is never sold or shared.</li>
+</ul>
 
-<h3>İletişim</h3>
-<p>Sorularınız için: <a href="mailto:gunduzemrah95@gmail.com">gunduzemrah95@gmail.com</a></p>
+<h3>Data stored on your phone</h3>
+<ul>
+  <li><b>Vehicle data:</b> speed, RPM, engine temperature, fuel consumption, battery voltage, trouble codes and other values read from the OBD adapter.</li>
+  <li><b>Trips:</b> duration, distance, fuel, driving score and the route (location points) recorded while logging.</li>
+  <li><b>What you enter:</b> car make/model, fuel fills, maintenance records, settings and your optional Claude API key.</li>
+</ul>
+<p>You can delete this data inside the app, or remove it entirely by uninstalling the app. If Android backup is turned on, Android may include this data in the app backup in your own Google account; that backup is managed by Google.</p>
 
-<hr>
+<h3>Permissions</h3>
+<ul>
+  <li><b>Bluetooth / Nearby devices:</b> to find and connect to the OBD adapter.</li>
+  <li><b>Location:</b> to draw the trip route and to calculate speed from GPS when OBD data isn't available. Location is used only while recording and stored only on your phone.</li>
+  <li><b>Notifications:</b> to show recording status, fault and maintenance alerts.</li>
+  <li><b>Foreground service:</b> so recording continues while the screen is off.</li>
+  <li><b>Android Auto car data (speed, fuel, mileage):</b> to read data from the car without an OBD adapter.</li>
+</ul>
 
-<h1>CarPulse – Privacy Policy</h1>
-<p class="meta">Effective date: November 1, 2026 · Developer: Yuritran</p>
+<h3>Data sent to third parties</h3>
+<ul>
+  <li><b>AI advice (optional):</b> Only when you enter your own Claude API key and tap "Ask AI", a summary of the inspection report (trouble codes, sensor and test results, a summary of the last 30 days of driving, upcoming maintenance, car make/model) is sent to Anthropic. Location and routes are not sent. This data is subject to Anthropic's <a href="https://www.anthropic.com/legal/privacy">privacy policy</a>.</li>
+  <li><b>Map:</b> When a trip route is shown, map images are downloaded from OpenStreetMap servers, which can see your IP address. The route itself is not sent.</li>
+  <li><b>Connected car account (optional):</b> If you enter a server address in Settings, vehicle data is read from that address. You choose this server.</li>
+</ul>
 
-<p>This privacy policy explains how the CarPulse Android app ("the App"), developed by Yuritran, handles your information.</p>
+<h3>Children</h3>
+<p>CarPulse is not directed at children under 13 and does not knowingly collect data from children.</p>
 
-<h3>Data collected</h3>
-<p>The App does not collect any personal data or send it to servers. No account or sign-in is required.</p>
-
-<h3>Vehicle data</h3>
-<p>The App reads technical data from your vehicle, such as RPM, speed, coolant temperature, fault codes and battery voltage, through a Bluetooth OBD2 (ELM327) adapter. This data is processed and stored only on your device to provide live gauges, driving analysis, fault warnings, maintenance reminders and trip logs. It is never sent to any server.</p>
-
-<h3>Bluetooth and location permissions</h3>
-<p>The App needs Bluetooth permissions (BLUETOOTH_SCAN, BLUETOOTH_CONNECT) to find and connect to your OBD2 adapter. On Android 11 and earlier, the system requires location permission (ACCESS_FINE_LOCATION) to scan for Bluetooth devices; it is used only to find the adapter. If the trip log feature uses location, that data is stored only on your device and is not shared.</p>
-
-<h3>Deleting your data</h3>
-<p>You can delete your data at any time from within the App, by clearing the App's data in Android settings, or by uninstalling the App.</p>
-
-<h3>Third-party services</h3>
-<p>The App does not use any third-party analytics or advertising services that collect personal data.</p>
-
-<h3>Disclaimer</h3>
-<p>The App is not a substitute for professional vehicle diagnosis. Do not interact with the App while driving.</p>
-
-<h3>Children's privacy</h3>
-<p>The App is not directed at children and does not knowingly collect personal data from anyone.</p>
-
-<h3>Changes</h3>
-<p>This policy may be updated. Changes will be posted on this page with an updated effective date.</p>
-
-<h3>Contact</h3>
-<p>For questions: <a href="mailto:gunduzemrah95@gmail.com">gunduzemrah95@gmail.com</a></p>
+<h3>Changes and contact</h3>
+<p>If this policy changes, this page will be updated. Questions: <a href="mailto:yuritrantech@gmail.com">yuritrantech@gmail.com</a></p>
+</section>
+</main>
 </body>
 </html>
