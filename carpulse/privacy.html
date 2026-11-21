@@ -21,7 +21,7 @@
 <body>
 <main>
 <h1>CarPulse</h1>
-<p class="muted">Son güncelleme / Last updated: 3 Kasım 2026 / November 3, 2026</p>
+<p class="muted">Son güncelleme / Last updated: 21 Kasım 2026 / November 21, 2026</p>
 <nav><a href="#tr">Türkçe</a> · <a href="#en">English</a></nav>
 
 <section id="tr">
@@ -31,7 +31,7 @@
 <h3>Kısaca</h3>
 <ul>
   <li>Hesap açman gerekmez; adın, e-postan veya telefon numaran istenmez.</li>
-  <li>Verilerin telefonunda saklanır. Geliştiriciye ait bir sunucu yoktur, verilerin bize gönderilmez.</li>
+  <li>Verilerin telefonunda saklanır. Geliştiriciye ait bir sunucu yoktur, verilerin bize gönderilmez. Yapay zeka önerisini kullanırsan araç özeti aşağıda anlatıldığı gibi Google'a gönderilir.</li>
   <li>Reklam, analiz veya izleme aracı kullanılmaz; veriler satılmaz ve paylaşılmaz.</li>
 </ul>
 
@@ -39,7 +39,7 @@
 <ul>
   <li><b>Araç verileri:</b> hız, devir, motor sıcaklığı, yakıt tüketimi, akü voltajı, arıza kodları ve OBD adaptöründen okunan diğer değerler.</li>
   <li><b>Yolculuklar:</b> süre, mesafe, yakıt, sürüş puanı ve kayıt sırasında tutulan rota (konum noktaları).</li>
-  <li><b>Kendi girdiklerin:</b> araç markası/modeli, yakıt alımları, bakım kayıtları, ayarlar ve isteğe bağlı Claude API anahtarın.</li>
+  <li><b>Kendi girdiklerin:</b> araç markası/modeli, yakıt alımları, bakım kayıtları ve ayarlar.</li>
 </ul>
 <p>Bu verileri uygulama içinden silebilir, uygulamayı kaldırarak da tamamen silebilirsin. Android'in yedekleme özelliği açıksa, Android bu verileri kendi Google hesabındaki uygulama yedeğine dahil edebilir; bu yedek Google tarafından yönetilir.</p>
 
@@ -54,7 +54,8 @@
 
 <h3>Üçüncü taraflara giden veriler</h3>
 <ul>
-  <li><b>Yapay zeka önerisi (isteğe bağlı):</b> Yalnızca kendi Claude API anahtarını girip "Yapay zekaya sor"a bastığında, araç kontrol raporunun bir özeti (arıza kodları, sensör ve test sonuçları, son 30 günün sürüş özeti, yaklaşan bakımlar, araç markası/modeli) Anthropic'e gönderilir. Konum ve rota gönderilmez. Bu veri Anthropic'in <a href="https://www.anthropic.com/legal/privacy">gizlilik politikasına</a> tabidir.</li>
+  <li><b>Yapay zeka önerisi (isteğe bağlı):</b> Yalnızca "Yapay zekaya sor"a bastığında, araç kontrol raporunun bir özeti (arıza kodları, sensör ve test sonuçları, son 30 günün sürüş özeti, yaklaşan bakımlar, araç markası/modeli) Google'ın Gemini modeline Firebase AI Logic üzerinden gönderilir. Konum, rota, VIN (şasi numarası) ve araç yazılım kimlikleri gönderilmez. İkinci el araç kontrolünde (alıcı modu) kendi aracına ait geçmiş (yolculuklar, bakım, profil) da gönderilmez. Gelen cevap yalnızca telefonda saklanır. Bu veri Google'ın <a href="https://firebase.google.com/support/privacy">Firebase gizlilik</a> ve <a href="https://ai.google.dev/gemini-api/terms">Gemini API</a> koşullarına tabidir.</li>
+  <li><b>Uygulama doğrulama (Firebase App Check):</b> Yapay zeka isteklerinin gerçek CarPulse uygulamasından geldiğini doğrulamak için Google Play Integrity kullanılır. Bu doğrulama cihaz ve uygulama bütünlüğü bilgisini Google'a iletir; kişisel bilgi veya araç verisi içermez.</li>
   <li><b>Harita:</b> Yolculuk rotası gösterilirken harita görselleri OpenStreetMap sunucularından indirilir; bu sırada bu sunucular IP adresini görebilir. Rota bilgisi gönderilmez.</li>
   <li><b>Bağlı araç hesabı (isteğe bağlı):</b> Ayarlar'da kendin bir sunucu adresi girersen, araç verisi o adresten okunur. Bu sunucuyu sen seçersin.</li>
 </ul>
@@ -73,7 +74,7 @@
 <h3>In short</h3>
 <ul>
   <li>No account is needed; the app never asks for your name, email or phone number.</li>
-  <li>Your data stays on your phone. There is no developer server and your data is not sent to us.</li>
+  <li>Your data stays on your phone. There is no developer server and your data is not sent to us. If you use AI advice, a vehicle summary is sent to Google as described below.</li>
   <li>No ads, analytics or tracking tools are used; data is never sold or shared.</li>
 </ul>
 
@@ -81,7 +82,7 @@
 <ul>
   <li><b>Vehicle data:</b> speed, RPM, engine temperature, fuel consumption, battery voltage, trouble codes and other values read from the OBD adapter.</li>
   <li><b>Trips:</b> duration, distance, fuel, driving score and the route (location points) recorded while logging.</li>
-  <li><b>What you enter:</b> car make/model, fuel fills, maintenance records, settings and your optional Claude API key.</li>
+  <li><b>What you enter:</b> car make/model, fuel fills, maintenance records and settings.</li>
 </ul>
 <p>You can delete this data inside the app, or remove it entirely by uninstalling the app. If Android backup is turned on, Android may include this data in the app backup in your own Google account; that backup is managed by Google.</p>
 
@@ -96,7 +97,8 @@
 
 <h3>Data sent to third parties</h3>
 <ul>
-  <li><b>AI advice (optional):</b> Only when you enter your own Claude API key and tap "Ask AI", a summary of the inspection report (trouble codes, sensor and test results, a summary of the last 30 days of driving, upcoming maintenance, car make/model) is sent to Anthropic. Location and routes are not sent. This data is subject to Anthropic's <a href="https://www.anthropic.com/legal/privacy">privacy policy</a>.</li>
+  <li><b>AI advice (optional):</b> Only when you tap "Ask AI", a summary of the inspection report (trouble codes, sensor and test results, a summary of the last 30 days of driving, upcoming maintenance, car make/model) is sent to Google's Gemini model through Firebase AI Logic. Location, routes, the VIN and vehicle software IDs are never sent. In the used-car check (buyer mode), your own car's history (trips, maintenance, profile) is not sent either. The answer is stored only on your phone. This data is subject to Google's <a href="https://firebase.google.com/support/privacy">Firebase privacy</a> and <a href="https://ai.google.dev/gemini-api/terms">Gemini API</a> terms.</li>
+  <li><b>App verification (Firebase App Check):</b> Google Play Integrity is used to verify that AI requests come from the genuine CarPulse app. This check sends device and app integrity information to Google; it contains no personal or vehicle data.</li>
   <li><b>Map:</b> When a trip route is shown, map images are downloaded from OpenStreetMap servers, which can see your IP address. The route itself is not sent.</li>
   <li><b>Connected car account (optional):</b> If you enter a server address in Settings, vehicle data is read from that address. You choose this server.</li>
 </ul>
